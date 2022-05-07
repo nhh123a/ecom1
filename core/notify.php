@@ -20,4 +20,14 @@
         </script>";
         unset($_SESSION['notifyerror']);
     }
+    if(!empty($_SESSION['notifyinfo'])){
+      echo "<script>
+      Swal.fire(
+          'Thông báo',
+          '".$_SESSION['notifyinfo']."',
+          'info'
+        )
+      </script>";
+      unset($_SESSION['notifyinfo']);
+  }
 ?>

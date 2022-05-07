@@ -14,13 +14,19 @@
             }
             return $data;
         }
-        function savecart($data = []){
-            return $this->save(self::table,$data);
+        function savecart($data = [],$id =0 ){
+            return $this->save(self::table,$data,$id);
         }
         function deletecartbyId($id =0 ,$option = []){
             $option = [
                 'where' => "id = $id"
             ];
             return $this->delete(self::table,$option);
+        }
+        function getcartbyP_id($p_id = 0,$option = []){
+            $option = [
+                'where' =>"p_id = $p_id AND user_id = ".$_SESSION['user_id']."",
+            ];
+            return $this->get(self::table,$option);
         }
     }

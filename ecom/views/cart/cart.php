@@ -21,14 +21,14 @@
 			
 			</div>
 			<div class="clearfix"> </div></td>
-			<td class="check"><input type="text" value="1" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"></td>		
+			<td><?php echo $row['qty']?></td>		
 			<td>$<?php echo $row['product_price']?></td>
 			<td>FREE SHIPPING</td>
-			<td>$<?php echo $row['product_price']?></td>
+			<td>$<?php echo $row['product_price'] *$row['qty'] ?></td>
 			<td><a href="http://localhost/ecom1/cart/delete/<?php echo $row['id']?>">Delete</a></td>
 		  </tr>
           <?php 
-			$total = $total + $row['product_price'];
+			$total = $total + $row['product_price']*$row['qty'] ;
 		}?>
 	</table>
 	<div>

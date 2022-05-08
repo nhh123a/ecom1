@@ -13,7 +13,8 @@
             $dataprd = $this->prd->getproductbyBrandid($id);
             $this->view('inc/header',[
                 'data' => $datactg,
-                'databrand' => $databrand
+                'databrand' => $databrand,
+                'title' => 'Brand'
             ]);
 
             $this->view('product/index',[

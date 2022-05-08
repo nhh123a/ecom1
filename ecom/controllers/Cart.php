@@ -18,7 +18,8 @@ class Cart extends Controller
             $datacart  = $this->cart->getcart();
             $this->view('inc/header', [
                 'data' => $datactg,
-                'databrand' => $databrand
+                'databrand' => $databrand,
+                'title' => 'Cart'
             ]);
             $this->view('cart/cart', [
                 'datacart' => $datacart

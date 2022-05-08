@@ -13,7 +13,8 @@
             $dataprd = $this->prd->getproductbyCatid($id);
             $this->view('inc/header',[
                 'data' => $datactg,
-                'databrand' => $databrand
+                'databrand' => $databrand,
+                'title' => 'Category'
             ]);
 
             $this->view('product/index',[

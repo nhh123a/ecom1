@@ -59,7 +59,8 @@
                         $dataErr['passErr'] = "Pass is incorrect";
                         $this->view('inc/header',[
                             'data' => $datactg,
-                            'databrand' => $databrand
+                            'databrand' => $databrand,
+                            'title' =>'Login'
                         ]);
                         $this->view('user/login',[
                             'data' => $data,
@@ -71,7 +72,8 @@
                    
                     $this->view('inc/header',[
                         'data' => $datactg,
-                        'databrand' => $databrand
+                        'databrand' => $databrand,
+                        'title' =>'Login'
                     ]);
                     $this->view('user/login',[
                         'data' => $data,
@@ -95,7 +97,8 @@
                 $dataprd = $this->prd->getproduct();
                 $this->view('inc/header',[
                     'data' => $datactg,
-                    'databrand' => $databrand
+                    'databrand' => $databrand,
+                    'title' =>'Login'
                 ]);
                 $this->view('user/login',[
                     'data' => $data,
@@ -214,7 +217,8 @@
                         $dataErr['emailErr'] = "Tài khoản đã tồn tại";
                         $this->view('inc/header',[
                             'data' => $datactg,
-                            'databrand' => $databrand
+                            'databrand' => $databrand,
+                            'title' =>'Register'
                         ]);
                         $this->view('user/register',[
                             'data'    => $data,
@@ -230,7 +234,8 @@
                         }else{
                             $this->view('inc/header',[
                                 'data' => $datactg,
-                                'databrand' => $databrand
+                                'databrand' => $databrand,
+                                'title' =>'Register'
                             ]);
                             $this->view('user/register',[
                                 'data'    => $data,
@@ -243,7 +248,8 @@
                 }else{
                     $this->view('inc/header',[
                         'data' => $datactg,
-                        'databrand' => $databrand
+                        'databrand' => $databrand,
+                        'title' =>'Register'
                     ]);
                     $this->view('user/register',[
                         'data'    => $data,
@@ -254,7 +260,8 @@
             }else{
                 $this->view('inc/header',[
                     'data' => $datactg,
-                    'databrand' => $databrand
+                    'databrand' => $databrand,
+                    'title' =>'Register'
                 ]);
                 $this->view('user/register',[
                     'data'    => $data,

@@ -14,7 +14,8 @@
             $dataprd = $this->prd->getproduct();
             $this->view('inc/header',[
                 'data' => $datactg,
-                'databrand' => $databrand
+                'databrand' => $databrand,
+                'title' =>'Product'
             ]);
 
             $this->view('product/index',[
@@ -49,7 +50,8 @@
             $datatag = explode(',',$tag);
             $this->view('inc/header',[
                 'data' => $datactg,
-                'databrand' => $databrand
+                'databrand' => $databrand,
+                'title' =>'Info Product'
             ]);
 
             $this->view('cart/info_product',[

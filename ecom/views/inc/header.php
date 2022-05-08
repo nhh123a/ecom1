@@ -1,7 +1,10 @@
+<?php
+$title = isset($data['title']) ? $data['title'] : 'Trang chủ';
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Fashion Mania A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title><?php echo $title ?></title>
 <link href="http://localhost/ecom1/ecom/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://localhost/ecom1/ecom/public/js/jquery.min.js"></script>

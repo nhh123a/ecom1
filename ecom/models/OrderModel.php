@@ -17,4 +17,7 @@
             }
             return $data;
         }
+        function saveorder($data = [], $id = 0){
+            return $this->save(self::table,$data,$id);
+        }
     }

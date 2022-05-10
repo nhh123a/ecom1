@@ -1,5 +1,6 @@
 <?php
 $title = isset($data['title']) ? $data['title'] : 'Trang chủ';
+$total = isset($_SESSION['cart']) ? number_format($_SESSION['cart']) : 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,12 +58,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span>Welcome: '.$_SESSION['name'].'</span><a  href="http://localhost/ecom1/user/logout"  >Loguot</a></p>';
 					}?>
 						<div class="cart box_1">
-						<a href="checkout.html">
+						<a href="http://localhost/ecom1/cart/">
 						<h3> <div class="total">
-							<span class="simpleCart_total"></span></div>
+							<span class="">$<?php echo $total ?></span></div>
 							<img src="http://localhost/ecom1/ecom/public/images/cart.png" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<p><a href="http://localhost/ecom1/cart/" class="simpleCart_empty">Go to Cart</a></p>
 
 					</div>
 					<div class="clearfix"> </div>

@@ -36,7 +36,7 @@ class Cart extends Controller
     {
         if ($_SESSION['user_id']) {
             $data = [
-                'p_id'      => $id,
+                'product_id'      => $id,
                 'user_id'   => $_SESSION['user_id'],
                 'ip_add'    => $_SERVER['REMOTE_ADDR'],
                 'qty'       => '1',
@@ -68,11 +68,18 @@ class Cart extends Controller
     }
     function delete($id)
     {
-        $delete = $this->cart->deletecartbyId($id);
+        $option = [
+            'where' => "id = $id"
+        ];
+        $delete = $this->cart->deletecartbyId($option);
         if ($delete) {
             header('Location: http://localhost/ecom1/cart/cart');
         } else {
             echo 'Xóa thất bại';
         }
+    }
+
+    function update(){
+        
     }
 }

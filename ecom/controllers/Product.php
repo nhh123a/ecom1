@@ -9,17 +9,31 @@
             $this->order = $this->model('OrderModel');
         }
         function index(){
+            $currentpage = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 4;
+            $basepath = 'http://localhost/ecom1/product/index';
+            $totalrecords = count($this->prd->getproduct());
+            
+            $offset = ($currentpage - 1) * $limit;
+            $paging = new paging($basepath,$totalrecords,$limit,$offset,$currentpage);
+            $page = $paging->createlink();
+
+            $options = [
+                'limit'=>$limit,
+                'offset'=>$offset
+            ];
             $datactg = $this->ctg->getcategory();
             $databrand = $this->brand->getbrand();
-            $dataprd = $this->prd->getproduct();
+            $dataprd = $this->prd->getproduct($options);
             $this->view('inc/header',[
                 'data' => $datactg,
                 'databrand' => $databrand,
-                'title' =>'Product'
+                'title' =>'Product',
             ]);
 
             $this->view('product/index',[
-                'dataprd' => $dataprd
+                'dataprd' => $dataprd,
+                'page' =>$page
             ]);
 
             $this->view('inc/footer');

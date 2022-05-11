@@ -36,9 +36,10 @@
 				</div>	
                 <?php }?>	
 			 <div class="clearfix"> </div> 
-
+			 <div style="margin-left:500px"><?php echo $data['page'] ?></div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!--//content-->

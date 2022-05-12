@@ -43,6 +43,7 @@
 	<?php $_SESSION['cart'] = $total;?>
 	</div>
 	<div class="clearfix"> </div>
+	<div style="margin-left:500px"><?php echo $data['page'] ?></div>
     </div>
 </div>
 

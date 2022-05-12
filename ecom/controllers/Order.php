@@ -12,22 +12,7 @@
         }
 
         function order(){
-            // $option = [
-            //     'select' =>'id',
-            //     'where' =>"user_id = ".$_SESSION['user_id'].""
-            // ];
-            // $datacartid = $this->cart->getcart1($option);
             
-            // for ($i=0; $i < count($datacartid); $i++) { 
-            //     $id = $datacartid[$i]['id'];
-            //     $option = [
-            //         'where' => "id = $id"
-            //     ];
-            //     echo $datacartid[$i]['id'];
-            //     //$deletecart = $this->cart->deletecartbyId($datacartid[$i]['id']);
-            // }
-
-            // die();
             $options= [
                 'select' => 'product_id,qty',
                 'where' =>"user_id = ".$_SESSION['user_id'].""

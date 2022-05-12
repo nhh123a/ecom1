@@ -13,16 +13,29 @@ class Cart extends Controller
     function index()
     {
         if ($_SESSION['user_id']) {
+            $currentpage = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 4;
+            $basepath = 'http://localhost/ecom1/cart/index';
+            $totalrecords = count($this->cart->getcart());
+            $offset = ($currentpage - 1) * $limit;
+            $paging = new paging($basepath,$totalrecords,$limit,$offset,$currentpage);
+            $page = $paging->createlink();
+
+            $options = [
+                'limit' =>$limit,
+                'offser' => $offset
+            ];
             $datactg   = $this->ctg->getcategory();
             $databrand = $this->brand->getbrand();
-            $datacart  = $this->cart->getcart();
+            $datacart  = $this->cart->getcart($options);
             $this->view('inc/header', [
                 'data' => $datactg,
                 'databrand' => $databrand,
                 'title' => 'Cart'
             ]);
             $this->view('cart/cart', [
-                'datacart' => $datacart
+                'datacart' => $datacart,
+                'page' => $page,
             ]);
 
             $this->view('inc/footer');

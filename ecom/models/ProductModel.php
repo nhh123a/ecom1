@@ -7,10 +7,7 @@
         }
 
         function getproductbyId($id,$option=[]){
-            $option =[
-                'where' => "product_id = $id",
-            ];
-
+            
             return $this->get(self::table,$option);
         }
 

@@ -24,12 +24,12 @@
 			
 			</div>
 			<div class="clearfix"> </div></td>
-			<td><input style="width:50px;" type="text" name= "qty" value="<?php echo $row['qty']?>">	</td>
+			<td><input style="width:50px;" type="text" id = "qty" name= "qty" value="<?php echo $row['qty']?>">	</td>
 			<td>$<?php echo $row['product_price']?></td>
 			<td>FREE SHIPPING</td>
 			<td>$<?php echo number_format($row['product_price'] *$row['qty']) ?></td>
 			<td><a href="http://localhost/ecom1/cart/delete/<?php echo $row['id']?>">Delete</a></td>
-			<td><a href="http://localhost/ecom1/cart/update/<?php echo $row['id']?>">Update</a></td>
+			<td><a href="http://localhost/ecom1/cart/update/<?php echo $row['id']?>" >Update</a></td>
 		  </tr>
           <?php 
 			$total = $total + $row['product_price']*$row['qty'] ;
@@ -45,3 +45,5 @@
 	<div class="clearfix"> </div>
     </div>
 </div>
+
+

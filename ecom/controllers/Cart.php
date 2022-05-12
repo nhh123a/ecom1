@@ -79,7 +79,23 @@ class Cart extends Controller
         }
     }
 
-    function update(){
-        
+    function update($id){
+        if(isset($_SESSION['user_id'])){
+            // $data = [
+            //     'qty' => $qty,
+            // ];
+            // $updatecart = $this->cart->savecart($data,$id);
+            // if($updatecart){
+            //     $_SESSION['notifysucces'] = "Cập nhật thành công";
+            //     header('Location: http://localhost/ecom1/cart/cart');
+            // }else{
+            //     $_SESSION['notifyerror'] = "Cập nhật thất bại";
+            //     header('Location: http://localhost/ecom1/cart/cart');
+            // }
+
+        }else {
+            $_SESSION['notifyinfo'] = "Vui lòng đăng nhập";
+            header("Location: http://localhost/ecom1/user/login");
+        }
     }
 }

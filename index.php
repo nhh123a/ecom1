@@ -6,6 +6,4 @@
     require_once 'ecom/models/Model.php';
     $App = new App();
 
-
-
 ?>

@@ -10,8 +10,8 @@
         function index($id){
             $currentpage = isset($_GET['page']) ? $_GET['page'] : 1;
             $limit = 4;
-            $basepath = 'http://localhost/ecom1/product/index';
-            $totalrecords = count($this->prd->getproductbyCatid($id));
+            $basepath = "http://localhost/ecom1/category/index/$id";
+            $totalrecords = count($this->prd->getproductbyCatid($id,$option = ['where' => "product_id = $id"]));
             
             $offset = ($currentpage - 1) * $limit;
             $paging = new paging($basepath,$totalrecords,$limit,$offset,$currentpage);
@@ -25,7 +25,7 @@
 
             $datactg = $this->ctg->getcategory();
             $databrand = $this->brand->getbrand();
-            $dataprd = $this->prd->getproductbyCatid($id);
+            $dataprd = $this->prd->getproductbyCatid($id,$option);
             $this->view('inc/header',[
                 'data' => $datactg,
                 'databrand' => $databrand,

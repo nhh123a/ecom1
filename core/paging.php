@@ -26,13 +26,13 @@ class paging{
         $html = '<nav aria-label="Page navigation example">';
         $html .= '<ul class="pagination">';
         if ($this->currentpage > 1 && $this->totalpage > 1){
-            $html .= '<li class="page-item"><a class="page-link" href="'.$this->basepath.'/?page='.($this->currentpage-1).'">Prev</a></li>';
+            $html .= '<li class="page-item"><a class="page-link" href="'.$this->basepath.'&page='.($this->currentpage-1).'">Prev</a></li>';
         }
         for ($i=1; $i <= $this->totalpage ; $i++) { 
-            $html .= '<li class="page-item"><a class="page-link" href="'.$this->basepath.'/?page='.$i.'">'.$i .'</a></li>';
+            $html .= '<li class="page-item"><a class="page-link" href="'.$this->basepath.'&page='.$i.'">'.$i .'</a></li>';
         }
         if ($this->currentpage < $this->totalpage && $this->totalpage > 1){
-            $html .= '<li class="page-item"><a class="page-link" href="'.$this->basepath.'/?page='.($this->currentpage+1).'">Next</a></li>';
+            $html .= '<li class="page-item"><a class="page-link" href="'.$this->basepath.'&page='.($this->currentpage+1).'">Next</a></li>';
         }
         $html .='</ul>
         </nav>';

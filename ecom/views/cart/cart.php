@@ -1,3 +1,4 @@
+<?php     require_once './core/notify.php'; ?>
 <div class="container">
 	<form action="http://localhost/ecom1/order/order" method = "post">
 	<div class="check-out">
@@ -28,8 +29,8 @@
 			<td>$<?php echo $row['product_price']?></td>
 			<td>FREE SHIPPING</td>
 			<td>$<?php echo number_format($row['product_price'] *$row['qty']) ?></td>
-			<td><a href="http://localhost/ecom1/cart/delete/<?php echo $row['id']?>">Delete</a></td>
-			<td><a href="http://localhost/ecom1/cart/update/<?php echo $row['id']?>" >Update</a></td>
+			<td><a onclick="cfDel(<?php echo $row['product_title']?>)" href="http://localhost/ecom1/cart/delete/<?php echo $row['id']?>" >Delete</a></td>
+			<td><a href="http://localhost/ecom1/cart/update/<?php echo $row['id']?>" onclick="getcube()">Update</a></td>
 		  </tr>
           <?php 
 			$total = $total + $row['product_price']*$row['qty'] ;
@@ -46,5 +47,16 @@
 	<div style="margin-left:500px"><?php echo $data['page'] ?></div>
     </div>
 </div>
+<script type="text/javascript">
+    function getcube() {
+        var qty = document.getElementById("qty").value;
+        //alert(qty);
+		document.cookie = "qty=" +qty;
+    }
 
+    function cfDel(name){
+        return confirm("Bạn có chắc muốn xóa "+ name +" ?");
+    }
+
+</script>
 

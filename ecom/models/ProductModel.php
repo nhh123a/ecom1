@@ -7,7 +7,9 @@
         }
 
         function getproductbyId($id,$option=[]){
-            
+            $option = [
+                'where' => "product_id=$id"
+            ];
             return $this->get(self::table,$option);
         }
 
@@ -20,16 +22,16 @@
             return $this->get(self::table,$option);
         }
         function getproductbyCatid($id,$option =[]){
-            $option =[
-                'where' => "`product_cat` = $id",
-            ];
+            // $option =[
+            //     'where' => "`product_cat` = $id",
+            // ];
             return $this->get(self::table,$option);
         }
 
         function getproductbyBrandid($id,$option =[]){
-            $option =[
-                'where' => "`product_brand` = $id",
-            ];
+            // $option =[
+            //     'where' => "`product_brand` = $id",
+            // ];
             return $this->get(self::table,$option);
         }
 

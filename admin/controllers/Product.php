@@ -1,9 +1,13 @@
 <?php
 
-    Class Product extends Controller{
+    Class Product extends Controlleradmin{
     
         function index(){
-            echo 'a';
+            $this->view('inc/header');
+            $this->view('inc/footer');
+        }
+        function add(){
+            echo 'add';
         }
 
     }

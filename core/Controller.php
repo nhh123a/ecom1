@@ -10,4 +10,5 @@ class Controller{
         require_once "./ecom/views/".$view.".php";
     }
 }
+
 ?>

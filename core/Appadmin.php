@@ -1,5 +1,5 @@
 <?php
-class App{
+class Appadmin{
 
     protected $controller="Product";
     protected $action="index";
@@ -10,11 +10,11 @@ class App{
         $arr = $this->UrlProcess();
  
         // Controller
-        if( file_exists("./ecom/controllers/".$arr[0].".php") ){
+        if( file_exists("./admin/controllers/".$arr[0].".php") ){
             $this->controller = $arr[0];
             unset($arr[0]);
         }
-        require_once "./ecom/controllers/". $this->controller .".php";
+        require_once "./admin/controllers/". $this->controller .".php";
         $this->controller = new $this->controller;
 
         // Action
@@ -39,7 +39,4 @@ class App{
     }
 
 }
-
-
-
 ?>

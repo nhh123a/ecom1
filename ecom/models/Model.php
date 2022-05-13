@@ -39,6 +39,10 @@
             echo $sql;
             return mysqli_query($this->con,$sql);
         }
+
+        function find($table,$option){
+            
+        }
         function _query($sql){
             return mysqli_query($this->con,$sql);
         }

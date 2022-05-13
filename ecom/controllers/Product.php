@@ -77,5 +77,42 @@
 
             $this->view('inc/footer');
         }
+
+        function search(){
+            $search = $_GET['search'];
+            $currentpage = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 4;
+            $basepath = "http://localhost/ecom1/product/search?search=$search";
+            $option = [
+                'where' => "`product_keywords` LIKE '%$search%'"
+            ];
+            $totalrecords = count($this->prd->getproduct($option));
+            
+            $offset = ($currentpage - 1) * $limit;
+            $paging = new paging($basepath,$totalrecords,$limit,$offset,$currentpage);
+            $page = $paging->createlink();
+
+            $options = [
+                'limit'=>$limit,
+                'offset'=>$offset,
+                'where' => "`product_keywords` LIKE '%$search%'"
+            ];
+            $datactg = $this->ctg->getcategory();
+            $databrand = $this->brand->getbrand();
+            $dataprd = $this->prd->getproduct($options);
+            $this->view('inc/header',[
+                'data' => $datactg,
+                'databrand' => $databrand,
+                'title' =>'Product',
+            ]);
+
+            $this->view('product/index',[
+                'dataprd' => $dataprd,
+                'page' =>$page
+            ]);
+
+            $this->view('inc/footer');
+            
+        }
     }
 ?>

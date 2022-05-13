@@ -133,8 +133,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </ul> 
 			</div>
 				<div class="col-sm-2 search">		
-			<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
-		</div>
+					<!-- <a class="play-icon popup-with-zoom-anim" href=""><i class="glyphicon glyphicon-search"> </i> </a> -->
+					<form action="http://localhost/ecom1/product/search" method="get">
+						<input style="width:111px" type="text" name = "search" placeholder ="Tìm kiếm ...">
+						<input type="submit" value = "Tìm">
+					</form>
+				</div>
 		<div class="clearfix"> </div>
 			<!---pop-up-box---->
 					  <script type="text/javascript" src="http://localhost/ecom1/ecom/public/js/modernizr.custom.min.js"></script>    
